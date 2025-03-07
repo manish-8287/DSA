@@ -2,9 +2,7 @@ class Solution {
     int func(String s , int start , int end,int[][] dp)
     {
         if(start>end) return 0;
-        // if(start==end) return 0;
         if(dp[start][end]!=-1) return dp[start][end];
-        int count = 0;
         if(s.charAt(start)==s.charAt(end))
         {
            return dp[start][end] = func(s , start+1 , end-1,dp);
