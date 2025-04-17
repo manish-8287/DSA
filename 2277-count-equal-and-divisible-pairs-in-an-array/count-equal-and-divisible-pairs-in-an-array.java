@@ -12,7 +12,7 @@ class Solution {
             {
                 for(int j=i+1;j<index.size();j++)
                 {
-                    if((index.get(i)*index.get(j)) %k == 0) count++;
+                    if(((long)index.get(i)*index.get(j)) %k == 0) count++;
                 }
             }
         }
