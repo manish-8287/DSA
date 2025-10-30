@@ -22,7 +22,7 @@ class Solution {
         {
             if(str1.charAt(n-1) == str2.charAt(m-1))
             {
-                result += str1.charAt(n-1);
+                result = str1.charAt(n-1)+result;
                 n--;
                 m--;
             }
@@ -30,31 +30,26 @@ class Solution {
             {
                 if(dp[n][m-1] > dp[n-1][m])
                 {
-                    result += str2.charAt(m-1);
+                    result = str2.charAt(m-1)+result;
                     m--;
                 }
                 else
                 {
-                    result += str1.charAt(n-1);
+                    result = str1.charAt(n-1)+result;
                     n--;
                 }
             }
         }
         while(n>0)
         {
-            result += str1.charAt(n-1);
+            result = str1.charAt(n-1) + result;
             n--;
         }
         while(m>0)
         {
-            result += str2.charAt(m-1);
+            result = str2.charAt(m-1) + result;
             m--;
         }
-        String r = "";
-        for(int i=result.length()-1;i>=0;i--)
-        {
-            r += result.charAt(i);
-        }
-        return r;
+        return result;
     }
 }
